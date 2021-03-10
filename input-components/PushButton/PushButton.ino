@@ -1,16 +1,19 @@
-int Button = 7;
-int RedLight = 8;
+int button = 0;
 
 void setup(){
-    pinMode(RedLight, OUTPUT);
-    pinMode(Button, INPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, INPUT_PULLUP);
+  
+  digitalWrite(8, HIGH);
+  delay(1000);
+  digitalWrite(8, LOW);
 }
 
 void loop(){
-    int buttonStat = digitalRead(Button);
-    if (buttonStat == HIGH){
-      digitalWrite(RedLight, HIGH);
-    }else{
-      digitalWrite(RedLight, LOW);
-    }
+  button = digitalRead(7);
+  if (button == LOW){
+  	digitalWrite(8, HIGH);
+  }else{
+    digitalWrite(8, LOW);
+  }
 }
