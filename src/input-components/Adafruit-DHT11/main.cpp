@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
-#include <DHT_U.h>
+#include <DHT_U.h> // minus ke ground, + ke 5V, dan tengah ke A0
 
 #define DHTPIN A0 // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11 // DHT 11
