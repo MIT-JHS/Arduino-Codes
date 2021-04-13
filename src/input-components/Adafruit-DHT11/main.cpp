@@ -7,7 +7,6 @@
 #define DHTTYPE DHT11 // DHT 11
 
 DHT_Unified dht(DHTPIN, DHTTYPE);
-uint32_t delayMS;
 
 float DHT11_Temperature;
 
@@ -29,10 +28,10 @@ void loop() {
 
 
   // Get temperature event and print its value.
-  dht.temperature().getEvent(&temperature);
+  dht.temperature().getEvent(&temperature); // temperature
 
   // Get humidity event and print its value.
-  dht.humidity().getEvent(&humidity);
+  dht.humidity().getEvent(&humidity); // humidity
 
   if (isnan(temperature.temperature)) {
     Serial.println(F("Error reading temperature!"));
